@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <h1>WEATHER INFORMATION</h1>
+    <h2>ENTER CITY NAME</h2>
+
+
+    <input type="text" id="cityName">
+    <br>
+    <button onclick="greet()">HELP</button>
+
+    <h1>PRECAUTIONS</h1>
+    <h2 id="result"></h2>
+
+    <h1>TEMPERATURE</h1>
+    <h2 id="result4"></h2>
+
+    <h1>MINIMUM TEMPERATURE</h1>
+    <h2 id="result2"></h2>
+
+    <h1>MAXIMUM TEMPERATURE</h1>
+    <h2 id="result3"></h2>
+
+    <script>
+        function greet() {
+
+            let cityName = document.getElementById("cityName").value
+            var result = document.getElementById("result");
+
+
+
+
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=0fc11432fae979fc9613a880dfa8a61c&units=metric`)
+                .then(function (response) {
+                    let weatherData = response.data
+                    result.innerText = "weatherData"
+
+                    var temp = Number(weatherData?.main?.temp)
+                    var minTemp = Number(weatherData?.main?.temp_min)
+                    var maxTemp = Number(weatherData?.main?.temp_max)
+
+                    switch (temp) {
+
+
+
+                        case "temp >= -40 && temp <= 10 || minTemp <= 10":
+                            result.innerText = "DON'T GO OUTSIDE IT'S TOO COLD & ON THE HEATERS"
+                            break
+
+                        case "temp > 10 && temp <= 20 || minTemp > 10 && minTemp <= 20":
+                            result.innerText = "WEAR A LEATHER JACKET & DRINK COFFEE & STAY WARM"
+                            break
+                        case "temp > 20 && temp <= 30 || minTemp <= 30":
+                            result.innerText = "WEAR A COAT & DRINK COFFEE & STAY WARM"
+                            break
+                        case "temp > 30 && temp <= 40 || minTemp <= 35":
+                            result.innerText = "WEAR A CAP & AND DRINK WATER "
+                            break
+                        case "temp > 40 || maxTemp > 40":
+                            result.innerText = "DON'T GO OUTSIDE IT'S TOO HOT"
+                            break
+
+
+                    }
+
+                    result2.innerText = minTemp
+                    result3.innerText = maxTemp
+                    result4.innerText = temp
+
+
+                })
+                .catch(function (errror) {
+
+                    result.innerText(error)
+
+                })
+
+        }
+    </script>
+
+
+</body>
+
+</html>

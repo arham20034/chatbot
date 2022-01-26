@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color:rgb(235, 156, 82);"></body> >
+
+<style>
+    h1 {
+        color: rgb(9, 70, 240);
+    }
+
+    h2 {
+        color: rgb(255, 0, 0);
+    }
+
+    h3 {
+        color: blueviolet;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .container {
+        text-align: center;
+    }
+</style>
+
+<H1>WEATHER INFORMATION</H1>
+<h3>ENTER TEMPERATURE</h3>
+
+<div class="container">
+    <input type="number" id="temp">
+    <button onclick="greet()">HELP</button>
+</div>
+
+
+<h2 id="result"></h2>
+
+<script>
+    function greet() {
+
+        var temp = document.getElementById("temp").value;
+
+        if (temp >= -40 & temp <= 10) {
+            var result = ("DON'T GO OUTSIDE IT'S TOO COLD & ON THE HEATERS")
+
+        } else if (temp > 10 & temp <= 20) {
+            var result = ("WEAR A LEATHER JACKET & DRINK COFFEE & STAY WARM")
+        } else if (temp > 20 & temp <= 30) {
+            var result = ("WEAR A COAT & DRINK COFFEE & STAY WARM")
+        } else if (temp > 30 & temp <= 40) {
+            var result = ("WEAR A CAP & AND DRINK WATER ")
+        } else if (temp >= 40) {
+            var result = ("DON'T GO OUTSIDE IT'S TOO HOT & AND DRINK PLENTY OF WATER")
+        }
+
+
+        document.getElementById("result").innerText = result;
+
+    }
+
+
+
+
+</script>
+
+</body>
+
+</html>

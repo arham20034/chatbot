@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: blue;">
+    <h1>CALCULATOR</h1>
+    <input type="number" id="input1">
+    <input type="nummber" id="input2">
+    <input type="number" id="input3">
+    <button onclick="greet()">sum</button>
+    <h2 id = "result"></h2>
+
+    <script>
+        function greet() {
+
+            var firstnumber = document.getElementById("input1").value;
+            var secondnumber = document.getElementById("input2").value;
+            var thirdnumber = document.getElementById("input3").value;
+
+            var result = +firstnumber + +secondnumber + +thirdnumber
+            document.getElementById("result").innerText=result;
+        }
+    </script>
+</body>
+
+</html>

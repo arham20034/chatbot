@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color:rgb(162, 241, 247);"></body> >
+
+<style>
+    h1 {
+        color: rgb(9, 70, 240);
+    }
+
+    h2 {
+        color: rgb(32, 134, 202);
+    }
+
+    h3 {
+        color: rgb(107, 43, 226);
+    }
+
+    h4 {
+        color: rgb(183, 0, 255)
+    }
+
+    h5 {
+        color: rgb(22, 9, 68)
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    h5 {
+        text-align: center;
+    }
+
+    .container {
+        text-align: center;
+    }
+</style>
+
+<H1>WEATHER INFORMATION</H1>
+<h3>ENTER TEMPERATURE</h3>
+
+<div class="container">
+    <input type="number" id="temp">
+    <br>
+    <h4>ENTER MIN TEMPERATURE</h4>
+    <input type="number" id="minTemp">
+    <br>
+    <h5>ENTER MAX TEMPERATURE</h5>
+    <input type="number" id="maxTemp">
+    <button onclick="greet()">HELP</button>
+</div>
+
+
+
+<h2 id="result"></h2>
+
+<script>
+    function greet() {
+
+        var temp = document.getElementById("temp").value;
+        var minTemp = document.getElementById("minTemp").value;
+        var maxTemp = document.getElementById("maxTemp").value;
+        var result = document.getElementById("result");
+
+
+        if (temp >= -40 && temp <= 10 || minTemp <= 10) {
+            result.innerText = "DON'T GO OUTSIDE IT'S TOO COLD & ON THE HEATERS"
+
+        } else if (temp > 10 && temp <= 20 || minTemp > 10 && minTemp <= 20) {
+            result.innerText = "WEAR A LEATHER JACKET & DRINK COFFEE & STAY WARM"
+        } else if (temp > 20 && temp <= 30 || minTemp <= 30) {
+            result.innerText = "WEAR A COAT & DRINK COFFEE & STAY WARM"
+        } else if (temp > 30 && temp <= 40 || minTemp <= 35) {
+            result.innerText = "WEAR A CAP & AND DRINK WATER "
+        } else if (temp > 40 || maxTemp > 40) {
+            result.innerText = "DON'T GO OUTSIDE IT'S TOO HOT"
+        }
+
+    }
+</script>
+
+</body>
+
+</html>
